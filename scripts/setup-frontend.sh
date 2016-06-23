@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FRONTEND_VERSION="stable"
+FRONTEND_VERSION="colab_taiga"
 
 pushd ~
 
@@ -22,9 +22,9 @@ EOF
 
 if [ ! -e ~/taiga-front ]; then
     # Initial clear
-    git clone https://github.com/taigaio/taiga-front-dist.git taiga-front
+    git clone https://github.com/mes-2016-1/taiga-front-dist.git taiga-front
     pushd ~/taiga-front
-    git checkout -f stable
+    git checkout -f colab_taiga
 
     mv /tmp/conf.json dist/
 
@@ -32,8 +32,8 @@ if [ ! -e ~/taiga-front ]; then
 else
     pushd ~/taiga-front
     git fetch
-    git checkout -f stable 
-    git reset --hard origin/stable
+    git checkout -f colab_taiga 
+    git reset --hard origin/colab_taiga
     popd
 fi
 
